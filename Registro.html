@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos – Registro</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="LoginStyle.css">
+</head>
+
+<body>
+
+    <div id="tarjeta">
+
+        <!-- LADO IZQUIERDO -->
+        <div id="lado-izquierdo">
+
+            <h1>Únete a Control G</h1>
+            <p class="subtitulo">Tu futuro financiero comienza hoy</p>
+
+            <div id="ilustracion">
+                <span><img src="https://previews.123rf.com/images/dolgachov/dolgachov1504/dolgachov150402340/38880131-business-people-and-technology-concept-smiling-businessman-in-suit-working-with-laptop-computer.jpg" alt="dinero"></span>
+            </div>
+
+            <div class="cuadro-informacion">
+
+                <div class="item-informacion">
+                    <span class="icono">🤑</span>
+                    <div class="texto">
+                        <strong>Organiza tus finanzas fácilmente</strong>
+                        <p>Crea tu cuenta y accede a los privilegiados servicios de nuestra privilegiada empresa.</p>
+                    </div>
+                </div>
+
+                <div class="item-informacion">
+                    <span class="icono">🔒</span>
+                    <div class="texto">
+                        <strong>Seguridad garantizada</strong>
+                        <p>Tus datos están protegidos con altos estándares.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- LADO DERECHO -->
+        <div id="lado-derecho">
+            <h2>Crea tu cuenta</h2>
+            <p class="registro">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+
+            <form id="formulario-registro">
+
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre Apellido" required>
+
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@email.com" required>
+
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" name="clave" placeholder="••••••••" required>
+
+                <label for="confirmar">Confirmar contraseña</label>
+                <input type="password" id="confirmar" name="confirmar" placeholder="••••••••" required>
+
+                <button type="submit" class="boton-ingresar">Registrarse</button>
+
+                <div class="divisor"><span>O Registrase con</span></div>
+
+                <div class="fila-Redsocial">
+                    <button type="button" class="boton-social">Google</button>
+                    <button type="button" class="boton-social">Instagram</button>
+                    <button type="button" class="boton-social">Facebook</button>
+                </div>
+
+                <div class="fila-final">
+                    <label>
+                        <input type="checkbox" required>
+                        Acepto los términos y condiciones
+                    </label>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
