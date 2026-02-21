@@ -62,16 +62,15 @@ body {
     border: 2.5px dashed #3ab06e55;
     overflow: hidden; 
     display: flex;
-    align-items: center;
     justify-content: center;
     align-self: center;
 }
 
 #ilustracion img {
-    width: 110%;
-    height: 105%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center;
 }
 
 
@@ -249,3 +248,4 @@ form input:focus {
     cursor: pointer;
     accent-color: var(--verde-medio);
 }
+
