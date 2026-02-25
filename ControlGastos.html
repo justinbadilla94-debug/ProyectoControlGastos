@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Gastos</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesConGast.css">
+
+</head>
+
+<body>
+    <header class="navbar">
+        <h2>Control de Gastos</h2>
+        <button class="logout-btn" onclick="cerrarSesion()">Cerrar sesión</button>
+    </header>
+
+    <div class="container">
+        <h1>!Bienvenido,  <span id="nombreUsuario"></span>¡</h1>
+
+        <div class="card">
+            <h2>Total Gastado</h2>
+            <p id="totalGastado">₡0</p>
+        </div>
+
+        <div class="card">
+            <h2>Categoría con Mayor Gasto</h2>
+            <p id="categoriaMayor">Ninguna</p>
+        </div>
+
+        <div class="card">
+            <h2>Último Gasto Registrado</h2>
+            <p id="ultimoGasto">Ninguno</p>
+        </div>
+
+        <div class="acciones">
+            <button onclick="irRegistrar()">Registrar Gasto</button>
+            <button onclick="irMisGastos()">Mis Gastos</button>
+  
+        </div>
+    </div>
+
+    <script src="ControlGastos.js"></script>
+</body>
+
+</html>
