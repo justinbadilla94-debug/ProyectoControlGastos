@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Gastos - Control G</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="MisGastos.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h2>Control G</h2>
+        <button class="logout-btn" onclick="window.location.href='login.html'">Cerrar sesión</button>
+    </header>
+
+    <div class="container">
+
+        <div class="top-bar">
+            <h1>Mis Gastos</h1>
+            <button class="btn-volver" onclick="window.location.href='ControlGastos.html'">← Volver al Panel</button>
+        </div>
+
+        <div class="card-total">
+            <span class="label-total">Total Acumulado</span>
+            <span id="totalAcumulado" class="monto-total">₡0</span>
+        </div>
+
+        <div class="filtros">
+            <input type="text" id="buscador" placeholder="🔍 Buscar por descripción..." oninput="filtrar()">
+            <select id="filtroCategoria" onchange="filtrar()">
+                <option value="">Todas las categorías</option>
+                <option value="Comida">Comida</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Entretenimiento">Entretenimiento</option>
+                <option value="Servicios">Servicios</option>
+                <option value="Otros">Otros</option>
+            </select>
+        </div>
+
+        <div id="listaGastos" class="lista-gastos">
+        </div>
+
+        <div id="mensajeVacio" class="mensaje-vacio" style="display:none;">
+            <span>😕</span>
+            <p>No se encontraron gastos.</p>
+        </div>
+
+    </div>
+
+    <script src="ControlGastos.js"></script>
+    <script src="MisGastos.js"></script>
+</body>
+</html>
