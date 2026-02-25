@@ -3,7 +3,16 @@ class ControlGastos {
 
     constructor(nombre) {
         this.nombre = nombre;
-        this.gastos = [];
+        this.gastos = this.cargarGastos();
+    }
+
+    guardarGastos() {
+        localStorage.setItem("gastos", JSON.stringify(this.gastos));
+    }
+
+    cargarGastos() {
+        const datos = localStorage.getItem("gastos");
+        return datos ? JSON.parse(datos) : [];
     }
 
     agregarGasto(descripcion, categoria, monto) {
@@ -15,7 +24,13 @@ class ControlGastos {
         };
 
         this.gastos.push(gasto);
+        this.guardarGastos();
         this.actualizarVista();
+    }
+
+    eliminarGasto(indice) {
+        this.gastos.splice(indice, 1);
+        this.guardarGastos();
     }
 
     obtenerTotal() {
@@ -23,8 +38,9 @@ class ControlGastos {
     }
 
     categoriaMayorGasto() {
-        const categorias = {};
+        if (this.gastos.length === 0) return "Ninguna";
 
+        const categorias = {};
         this.gastos.forEach(gasto => {
             categorias[gasto.categoria] =
                 (categorias[gasto.categoria] || 0) + gasto.monto;
@@ -43,51 +59,38 @@ class ControlGastos {
         return categoriaMayor;
     }
 
+    ultimoGasto() {
+        if (this.gastos.length === 0) return "Ninguno";
+        const ultimo = this.gastos[this.gastos.length - 1];
+        return `${ultimo.descripcion} - ₡${ultimo.monto.toLocaleString("es-CR")}`;
+    }
 
-ultimoGasto() {
-    if (this.gastos.length === 0) return "Ninguno";
+    actualizarVista() {
+        const totalEl = document.getElementById("totalGastado");
+        const categoriaEl = document.getElementById("categoriaMayor");
+        const ultimoEl = document.getElementById("ultimoGasto");
 
-    const ultimo = this.gastos[this.gastos.length - 1];
-    return `${ultimo.descripcion} - ₡${ultimo.monto}`;
+        if (totalEl) totalEl.textContent = "₡" + this.obtenerTotal().toLocaleString("es-CR");
+        if (categoriaEl) categoriaEl.textContent = this.categoriaMayorGasto();
+        if (ultimoEl) ultimoEl.textContent = this.ultimoGasto();
+    }
 }
-
-actualizarVista() {
-    document.getElementById("totalGastado").textContent =
-        "₡" + this.obtenerTotal();
-
-    document.getElementById("categoriaMayor").textContent =
-        this.categoriaMayorGasto();
-
-    document.getElementById("ultimoGasto").textContent =
-        this.ultimoGasto();
-}
-}
-
-
-// ----------------------
-// inicializacion 
-// ----------------------
 
 const app = new ControlGastos("Usuario");
-document.getElementById("nombreUsuario").textContent = app.nombre;
 
-// ----------------------
-// datitos de prueba (se eliminar luego)
-app.agregarGasto("Supermercado", "Comida", 15000);
-app.agregarGasto("Uber", "Transporte", 5000);
-app.agregarGasto("Netflix", "Entretenimiento", 7000);
+const nombreEl = document.getElementById("nombreUsuario");
+if (nombreEl) {
+    nombreEl.textContent = app.nombre;
+    app.actualizarVista();
+}
 
-
-// ----------------------
-// acciones de botones
-// ----------------------
 
 function irRegistrar() {
-    alert("Ir a la pantalla de Registrar Gasto");
+    window.location.href = "RegistroGasto.html";
 }
 
 function irMisGastos() {
-    alert("Ir a la pantalla de Mis Gastos");
+    window.location.href = "MisGastos.html";
 }
 
 function cerrarSesion() {
