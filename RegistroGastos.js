@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const monto = document.getElementById("monto").value;
         const categoria = document.getElementById("categoria").value;
 
-        // Creamos una instancia que ya carga lo que existe en localStorage
+
         const app = new ControlGastos("Usuario");
 
         app.agregarGasto(descripcion, categoria, monto);
@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         form.reset();
 
-        // Opcional: volver al panel principal
         window.location.href = "ControlGastos.html";
     });
+
 
 });
