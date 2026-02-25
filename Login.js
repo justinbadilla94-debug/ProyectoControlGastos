@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("El correo debe contener '@'.");
             return;
         }
-        alert("Correo válido ");
+       window.location.href = "controlGastos.html";
     });
 
 
