@@ -84,7 +84,6 @@ if (nombreEl) {
     app.actualizarVista();
 }
 
-
 function irRegistrar() {
     window.location.href = "RegistroGasto.html";
 }
@@ -92,6 +91,7 @@ function irRegistrar() {
 function irMisGastos() {
     window.location.href = "MisGastos.html";
 }
+
 function cerrarSesion() {
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }
