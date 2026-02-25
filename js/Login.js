@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("El correo debe contener '@'.");
             return;
         }
-       window.location.href = "controlGastos.html";
+     window.location.href = "html/ControlGastos.html";
     });
 
 
@@ -48,3 +48,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
