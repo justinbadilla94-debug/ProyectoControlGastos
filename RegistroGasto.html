@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Gasto - Control G</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesConGast.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Control G</h2>
+        <button class="logout-btn">Cerrar sesión</button>
+    </div>
+
+    <div class="container">
+        <h1>Registrar Nuevo Gasto</h1>
+
+        <div class="card">
+            <form id="form-gasto">
+
+                <div style="margin-bottom: 20px;">
+                    <label>Descripción</label>
+                    <input type="text" id="descripcion" placeholder="Ej: Netflix, Supermercado..."
+                        style="width:100%; padding:12px; border-radius:10px; border:1px solid #cfe8dc; margin-top:6px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label>Monto (₡)</label>
+                    <input type="number" id="monto" placeholder="Ej: 7000"
+                        style="width:100%; padding:12px; border-radius:10px; border:1px solid #cfe8dc; margin-top:6px;">
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <label>Categoría</label>
+                    <select id="categoria"
+                        style="width:100%; padding:12px; border-radius:10px; border:1px solid #cfe8dc; margin-top:6px;">
+                        <option value="">Seleccionar categoría</option>
+                        <option>Comida</option>
+                        <option>Transporte</option>
+                        <option>Entretenimiento</option>
+                        <option>Servicios</option>
+                        <option>Otros</option>
+                    </select>
+                </div>
+
+                <button type="submit">Guardar Gasto</button>
+
+            </form>
+        </div>
+
+        <div class="acciones">
+            <button onclick="window.location.href='ControlGastos.html'">
+                Volver a la pagina principal
+            </button>
+        </div>
+
+    </div>
+
+    <script src="ControlGastos.js"></script>
+    <script src="RegistroGastos.js"></script>
+
+</body>
+</html>
