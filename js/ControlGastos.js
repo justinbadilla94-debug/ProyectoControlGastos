@@ -92,7 +92,6 @@ function irRegistrar() {
 function irMisGastos() {
     window.location.href = "MisGastos.html";
 }
-
 function cerrarSesion() {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
