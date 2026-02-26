@@ -92,6 +92,10 @@ function irMisGastos() {
     window.location.href = "MisGastos.html";
 }
 
+function irDetalles() {
+    window.location.href = 'Detalle.html';
+}
+
 function cerrarSesion() {
     window.location.href = "../index.html";
 }
