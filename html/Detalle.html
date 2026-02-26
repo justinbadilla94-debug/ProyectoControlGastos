@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Detalle/Resumen</title>
+        <link rel="stylesheet" href="../css/Detalle.css">
+    </head>
+    
+    <body>
+        
+    <header class="navbar">
+        <h2>Resumen de Gastos</h2>
+        <button class="logout-btn" onclick="cerrarSesion()">Cerrar sesión</button>
+    </header>
+
+    <div class="container">
+
+        <div class="top-bar">
+            <h1>Mi resumen</h1>
+            <button class="btn-volver" onclick="window.location.href='ControlGastos.html'">← Volver al Panel</button>
+        </div>
+
+    </div>
+
+
+    <div class="grafico-container">
+
+        <canvas id="graficoPastel"></canvas>
+
+    </div>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Biblioteca para luego em el js -->
+        <script src="../js/Detalle.js"></script>
+
+    </body>
+</html>
