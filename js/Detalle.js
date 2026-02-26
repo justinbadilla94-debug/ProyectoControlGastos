@@ -1,5 +1,4 @@
-const gastos = JSON.parse(localStorage.getItem("gastos")) || []; //Carga datos o crea el espacio para guardarlos
-
+const gastos = JSON.parse(localStorage.getItem("gastos")) || []; 
 if (gastos.length === 0) {
     alert("No hay gastos registrados para mostrar en el gráfico.");
 } else {
@@ -10,7 +9,7 @@ if (gastos.length === 0) {
         const categoria = gasto.categoria;
         const monto = gasto.monto;
 
-       if (categorias[categoria]) {        //Este if-else se encarga de separar el monto de las categorias
+       if (categorias[categoria]) {      
             categorias[categoria] += monto;
         } else {
             categorias[categoria] = monto;
@@ -18,8 +17,8 @@ if (gastos.length === 0) {
     });
 
     
-    const labels = Object.keys(categorias); //Nombres
-    const data = Object.values(categorias); //Valores
+    const labels = Object.keys(categorias);
+    const data = Object.values(categorias); 
 
     
     const colores = [
@@ -48,7 +47,7 @@ if (gastos.length === 0) {
                 borderWidth: 1
             }]
         },
-        options: {            //Contexto de cada color
+        options: {      
             responsive: true,
             plugins: {
                 legend: {
@@ -66,6 +65,6 @@ if (gastos.length === 0) {
     });
 }
 
-function cerrarSesion() { //Boton de cerrarSesion
+function cerrarSesion() { 
     window.location.href = "../index.html";
 } 
